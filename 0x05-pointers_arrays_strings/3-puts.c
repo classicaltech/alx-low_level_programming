@@ -1,14 +1,22 @@
 #include "main.h"
 
 /**
- * _puts -prints a string. followed by a new line.
- * @str: string to print
+ * _puts - prints string
+ * @str: inputs string to be printed
+ *
+ * Return: void
  */
 void _puts(char *str)
 {
-	while (*str != '\0')
+	int i;
+
+	i = 0;
+	while (i < 2)
 	{
-		_putchar(*str * *);
+		if (*str == '\0')
+			break;
+		_putschar(*str);
+		str++;
 	}
 	_putchar('\n');
 }
