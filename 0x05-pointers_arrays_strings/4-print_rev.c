@@ -16,17 +16,22 @@ void print_rev(char *s)
 	{
 		if (*s == '\0')
 			break;
-		s++;
-	}
-	s--;
-	j =0;
-	while (j < 1)
-	{
-		_putchar(*s);
-		if (*s == a)
-			break;
+		i =0;
+		while (i < 1)
+		{
+			if (*s == '\0')
+				break;
+			s++;
+		}
 		s--;
+		j = 0;
+		while (j < 1)
+		{
+			_putchar(*s);
+			if (*s == a)
+				break;
+			s--;
+		}
 	}
-
-_putchar('\n');
+	_putchar('\n');
 }
