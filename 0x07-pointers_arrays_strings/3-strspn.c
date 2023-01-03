@@ -1,46 +1,46 @@
 #include "main.h"
 
 /**
- * _strspn - locates a character in a string
- * @s: This is the main C string to be scanned.
- * @accept: This is the string containing the list of characters tp match in s
- * Return: return count
+ * _strspn - returns the number of bytes of the initial segement of s
+ * @s: string to be checked
+ * @accept: string to be checked for
+ *
+ * Return: Number of bytes
  */
 
 unsigned int _strspn(char *s, char *accept)
-
 {
-	int i, j;
-	int count = 0;
-	char *str1, *str2;
+	unsigned int  a, b;
+	char *d;
 
-	str1 = s;
-	str2 = accept;
-
-	i = 0;
-	while (str1[i] != '\0')
-		/*Declaring WHILE *s */
+	d = s;
+	while (*accept != '\0')
 	{
-		j = 0;
-		while (str2[j] != '\0') /*Declaring WHILE *accept*/
+		s = d;
+		while ((*s != ' ') || (*s != ','))
 		{
-			j = 0;
-			while (str2[j] != '\0') /*Declaring WHILE *accept*/
-			{
-				if (str2[j] == str1[i]) /*Evaluate condition*/
-				{
-					count++; /*count number*/
-					break;
-				}
-				j++; /*addj+1*/
-			}
-			if (s[i] != accept[j])
-				/*if aren't equals*/
+			if (*s == *accept)
 			{
 				break;
 			}
-
-			i++; /*add x+1*/
+			else
+				continue;
+			s++;
 		}
-		return (count); /*return the value of count*/
+		if (*s != *accept)
+		{
+			a = 0;
+			break;
+		}
+		accept++;
 	}
+	if (*accept == '\0')
+	{
+		b = 0;
+		s = d;
+		while ((*s != ' ') || (*s != ','))
+			b++;
+		a = b;
+	}
+	return (a);
+}
