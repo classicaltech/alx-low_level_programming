@@ -1,1 +1,1 @@
-This readme file contains pointers arrays strings
+oxo7-pointers arrays strings
