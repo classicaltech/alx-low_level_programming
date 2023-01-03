@@ -1,4 +1,4 @@
-#include "mian.h"
+#include "main.h"
 /**
  * _memset - fills a memeory with a specific value
  * @s: starting address of memeory to be filled
